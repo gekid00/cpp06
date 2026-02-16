@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <typeinfo>
 
 Base* generate(void)
 {
@@ -37,7 +36,7 @@ void identify(Base& p)
         std::cout << "A" << std::endl;
         return;
     }
-    catch (std::bad_cast &e) {}
+    catch (...) {}
     
     try
     {
@@ -45,7 +44,7 @@ void identify(Base& p)
         std::cout << "B" << std::endl;
         return;
     }
-    catch (std::bad_cast &e) {}
+    catch (...) {}
     
     try
     {
@@ -53,7 +52,7 @@ void identify(Base& p)
         std::cout << "C" << std::endl;
         return;
     }
-    catch (std::bad_cast &e) {}
+    catch (...) {}
 }
 
 int main()
